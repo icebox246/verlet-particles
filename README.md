@@ -7,7 +7,13 @@ It supports simulating movement of circle shaped bodies and their collision with
 
 Rendering is facilitated using SDL2.
 
-# Quick start
+## Online demo
+
+Online demo is available at:
+
+[ https://verletdemo.netlify.app/ ]( https://verletdemo.netlify.app/ )
+
+## Quick start
 
 Project can be built both for Linux:
 
@@ -18,7 +24,7 @@ make
 
 Or for web using [Emscripten](https://emscripten.org/)
 
-```
+```console
 make web
 ```
 
