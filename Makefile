@@ -16,4 +16,4 @@ main: ${SOURCES}
 
 
 web: ${SOURCES} src/template.html
-	emcc ${SOURCES} ${EFLAGS} -o src/index.html 
+	emcc ${SOURCES} ${EFLAGS} -o web/index.html 
