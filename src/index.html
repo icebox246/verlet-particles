@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Emscripten-Generated Code</title>
+    <style>
+    </style>
+  </head>
+  <body>
+      <canvas id="canvas" oncontextmenu="event.preventDefault()" tabindex=-1></canvas>
+	  <p>Controls: </p>
+	  <ul>
+	  	<li>LMB - place lines</li>
+		<li>RMB - place balls</li>
+	  </ul>
+    <script type='text/javascript'>
+      var Module = {
+        preRun: [],
+        postRun: [],
+        canvas: (function() {
+          var canvas = document.getElementById('canvas');
+
+          canvas.addEventListener("webglcontextlost", function(e) { alert('WebGL context lost. You will need to reload the page.'); e.preventDefault(); }, false);
+
+          return canvas;
+        })(),
+        totalDependencies: 0,
+        monitorRunDependencies(left) {
+          this.totalDependencies = Math.max(this.totalDependencies, left);
+        },
+	    setStatus(status) {
+		  console.log("Requested status change", status);
+	    }
+      };
+      window.onerror = function() {
+        spinnerElement.style.display = 'none';
+      };
+    </script>
+    <script async type="text/javascript" src="index.js"></script>
+  </body>
+</html>
+
+
